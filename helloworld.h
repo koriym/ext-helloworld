@@ -30,16 +30,4 @@ PHP_MINFO_FUNCTION(helloworld);
 #define HELLOWORLD_G(v) (helloworld_globals.v)
 #endif
 
-# コンパイル定義を追加
-target_compile_definitions(helloworld PRIVATE COMPILE_DL_HELLOWORLD)
-
-# PHPライブラリを探す
-find_library(PHP_LIB
-    NAMES php libphp
-    PATHS ${PHP_PREFIX}/lib
-    NO_DEFAULT_PATH
-    REQUIRED
-)
-
-# PHPライブラリをリンク
-target_link_libraries(helloworld ${PHP_LIB})
+#endif  /* PHP_HELLOWORLD_H */
