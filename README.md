@@ -1,26 +1,59 @@
-# PECL - helloworld
+# HelloWorld PHP Extension
 
-PECL skeleton project
+A simple PHP extension that demonstrates basic and advanced "Hello World" functionality.
+
+## Features
+
+- Basic `helloworld()` function
+- Advanced `helloworld_advanced()` function with configurable greeting
+
+## Run
+
+1. Compile the extension:
+
+    ```
+    // make clean
+    // phpize --clear
+    phpize
+    ./configure --enable-helloworld --enable-helloworld-advanced
+    make
+    ```
+
+2. Run
+
+    ```
+    % php -d extension=./modules/helloworld.so -i | grep hello
+
+    helloworld
+    helloworld support => enabled
+    helloworld.greeting => Hello World! => Hello World!
+
+    % php -d extension=./modules/helloworld.so php/helloworld.php
+    Hello World!
+    Hello World!
+   ```
 
 ## Usage
 
-### helloworld
-
-helloworld - Just output `Hello World!`.
+### Basic Function
 
 ```php
-helloworld(): void
+<?php
+helloworld();
+// Output: Hello World!
 ```
 
-## Compile and Run
+### Advanced Function
 
-### Compile
+```php
+<?php
+helloworld_advanced();
+// Output: [Configurable greeting from php.ini]
+?>
+```
 
-phpinze
-./configure
-make
+To configure the greeting, add the following to your php.ini:
 
-### Run
-
-cd php
-sh hellowrld.sh
+```
+helloworld.greeting = "Your custom greeting!"
+```
