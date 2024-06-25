@@ -13,7 +13,7 @@ A simple PHP extension that demonstrates basic and advanced "Hello World" functi
 
     ```
     // make clean
-    // phpize --clear
+    // phpize --clean
     phpize
     ./configure --enable-helloworld --enable-helloworld-advanced
     make
