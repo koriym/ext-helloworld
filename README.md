@@ -1,5 +1,7 @@
 # HelloWorld PHP Extension
 
+[![Build and Test PHP Extension](https://github.com/koriym/ext-helloworld/actions/workflows/build.yml/badge.svg)](https://github.com/koriym/ext-helloworld/actions/workflows/build.yml)
+
 A simple PHP extension that demonstrates basic and advanced "Hello World" functionality.
 
 ## Features
@@ -15,7 +17,7 @@ A simple PHP extension that demonstrates basic and advanced "Hello World" functi
     // make clean
     // phpize --clean
     phpize
-    ./configure --enable-helloworld --enable-helloworld-advanced
+    ./configure --enable-helloworld-advanced
     make
     ```
 
