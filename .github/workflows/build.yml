@@ -41,4 +41,4 @@ jobs:
       - name: Run demo
         run: |
           php -d extension=./modules/helloworld.so -i | grep hello
-          echo '<?php helloworld(); helloworld_advanced();' | php -d extension=./modules/helloworld.so
+          echo '<?php helloworld(); helloworld_advanced();' | php -d extension=./modules/helloworld.so -dhelloworld.greeting="konichiwa"
