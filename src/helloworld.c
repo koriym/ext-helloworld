@@ -27,9 +27,13 @@ PHP_MINFO_FUNCTION(helloworld)
     php_info_print_table_end();
 }
 
+// 関数の引数情報を指定（引数がないため空）
+ZEND_BEGIN_ARG_INFO(arginfo_helloworld, 0)
+ZEND_END_ARG_INFO()
+
 // エクステンションの関数エントリーを定義
 const zend_function_entry helloworld_functions[] = {
-    PHP_FE(helloworld, NULL)  // helloworld関数をPHPから呼び出し可能にする
+    PHP_FE(helloworld, arginfo_helloworld)  // helloworld関数をPHPから呼び出し可能にする
     PHP_FE_END  // 関数エントリーの終了を示す
 };
 
