@@ -7,7 +7,7 @@
 #include "php_ini.h"
 #include "ext/standard/info.h"
 // エクステンション固有のヘッダーファイルをインクルード
-#include "php_helloworld.h"
+#include "include/php_helloworld.h"
 
 // helloworld関数の実装
 PHP_FUNCTION(helloworld)
