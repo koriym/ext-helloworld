@@ -9,7 +9,7 @@ clean() {
 prepare() {
     echo "Preparing..."
     phpize
-    ./configure
+    ./configure --enable-helloworld-advanced
 }
 
 build() {
@@ -24,7 +24,7 @@ install() {
 
 run() {
     echo "Run..."
-    php -dextension=helloworld.so helloworld.php
+    php -dextension=modules/helloworld.so -dhelloworld.greeting="konichiwa" helloworld.php
 }
 
 case $1 in
@@ -47,7 +47,6 @@ case $1 in
         clean
         prepare
         build
-        install
         run
         ;;
     *)
