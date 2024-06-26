@@ -6,6 +6,10 @@ extern zend_module_entry helloworld_module_entry;
 
 #define PHP_HELLOWORLD_VERSION "1.0"
 
+typedef struct _zend_helloworld_globals {
+    char *greeting;
+} zend_helloworld_globals;
+
 #ifdef PHP_WIN32
 #   define PHP_HELLOWORLD_API __declspec(dllexport)
 #elif defined(__GNUC__) && __GNUC__ >= 4

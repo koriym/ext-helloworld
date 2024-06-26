@@ -30,6 +30,8 @@
 /* Declare module globals */
 ZEND_DECLARE_MODULE_GLOBALS(helloworld)
 
+ZEND_DECLARE_MODULE_GLOBALS(helloworld)
+
 /* Define INI entries */
 PHP_INI_BEGIN()
     /* Define a configurable greeting message */
