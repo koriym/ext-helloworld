@@ -6,11 +6,6 @@
 
 A simple PHP extension that demonstrates basic "Hello World" functionality.
 
-## Features
-
-- Basic `helloworld()` function
-- Advanced `helloworld_advanced()` function with configurable greeting
-
 ## Run
 
 1. Compile the extension:
@@ -49,7 +44,7 @@ helloworld();
 After cloning, edit `hellworld.c` to change the message.
 
 ```c
-    php_printf("Hello World!\n");
+php_printf("Hello World!\n");
 ```
 
 Next, compile to build.
