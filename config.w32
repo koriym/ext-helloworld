@@ -1,0 +1,9 @@
+// vim:ft=javascript
+
+ARG_ENABLE("helloworld", "enable helloworld", "no");
+
+if (PHP_HELLOWORLD != "no") {
+	EXTENSION("helloworld", "helloworld.c");
+	AC_DEFINE('HAVE_HELLOWORLD', 1 , 'whether helloworld is enabled');
+	PHP_INSTALL_HEADERS("ext/helloworld/", "php_helloworld.h");
+}
