@@ -1,6 +1,8 @@
-# HelloWorld PHP Extension
+# A PECL project skeleton
 
-A simple PHP extension that demonstrates basic and advanced "Hello World" functionality.
+## HelloWorld PHP Extension
+
+A simple PHP extension that demonstrates basic "Hello World" functionality.
 
 ## Features
 
@@ -12,10 +14,8 @@ A simple PHP extension that demonstrates basic and advanced "Hello World" functi
 1. Compile the extension:
 
     ```
-    // make clean
-    // phpize --clean
     phpize
-    ./configure --enable-helloworld --enable-helloworld-advanced
+    ./configure
     make
     ```
 
@@ -26,14 +26,10 @@ A simple PHP extension that demonstrates basic and advanced "Hello World" functi
 
     helloworld
     helloworld support => enabled
-    helloworld.greeting => Hello World! => Hello World!
 
-    % php -d extension=./modules/helloworld.so php/helloworld.php
-    Hello World!
+    % php -d extension=./modules/helloworld.so smoke.php
     Hello World!
    ```
-
-## Usage
 
 ### Basic Function
 
@@ -43,17 +39,32 @@ helloworld();
 // Output: Hello World!
 ```
 
-### Advanced Function
+## Getting started with development
 
-```php
-<?php
-helloworld_advanced();
-// Output: [Configurable greeting from php.ini]
-?>
-```
+### Source build
 
-To configure the greeting, add the following to your php.ini:
+First try to clone this repository and see if you can build.
 
 ```
-helloworld.greeting = "Your custom greeting!"
+phpize
+. /configure
+make.
 ```
+
+This will create `modules/helloworld.so`. Now let's give it a try!
+
+```
+php -d extension=./modules/helloworld.so smoke.php
+```
+
+### Continuous Integration
+
+This project contains a GitHub action workflow file.
+Make sure the project is built successfully by ushing it; CI also installs Valgrind and checks for memory leaks.
+
+### IDE
+
+This repository contains CmakeLists.txt, which Clion needs to understand the source code.
+Development using an IDE is efficient and allows for debugging, including a backtrace.
+
+Refer to [Developing a PHP extension in CLion](https://dev.to/jasny/developing-a-php-extension-in-clion-3oo1) for more information.
