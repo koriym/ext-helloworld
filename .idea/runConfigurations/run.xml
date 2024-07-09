@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="run" type="CLionExternalRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-n -d &quot;extension=modules/helloworld.so&quot; &quot;smoke.php&quot;" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" WORKING_DIR="file://$ContentRoot$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="helloworld" TARGET_NAME="make" CONFIG_NAME="make" RUN_PATH="/opt/homebrew/bin/php">
+    <method v="2">
+      <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+    </method>
+  </configuration>
+</component>
