@@ -42,8 +42,8 @@ jobs:
       - name: Run demo with debug logging
         id: run_demo
         run: |
-          php -dextension=./modules/rayaop.so -i | grep rayaop
-          timeout 60s php -n -dextension=./modules/rayaop.so -dmemory_limit=128M -dreport_memleaks=1 -dzend.assertions=1 -dassert.exception=1 smoke.php
+          php -dextension=./modules/helloworld.so -i | grep helloworld
+          timeout 60s php -n -dextension=./modules/helloworld.so -dmemory_limit=128M -dreport_memleaks=1 -dzend.assertions=1 -dassert.exception=1 smoke.php
         continue-on-error: true
 
       - name: Run Valgrind memory check
@@ -59,7 +59,7 @@ jobs:
              ...
           }
           EOF
-          valgrind --suppressions=valgrind.supp --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt php -n -dextension=./modules/rayaop.so smoke.php
+          valgrind --suppressions=valgrind.supp --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt php -n -dextension=./modules/helloworld.so smoke.php
 
       - name: Check Valgrind results
         if: steps.run_tests.outcome == 'failure' || steps.run_demo.outcome == 'failure'
