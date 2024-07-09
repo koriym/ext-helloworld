@@ -1,5 +1,7 @@
 # A PECL project skeleton
 
+[![Build and Test PHP Extension](https://github.com/koriym/ext-helloworld/actions/workflows/build.yml/badge.svg)](https://github.com/koriym/ext-helloworld/actions/workflows/build.yml)
+
 ## HelloWorld PHP Extension
 
 A simple PHP extension that demonstrates basic "Hello World" functionality.
@@ -43,12 +45,19 @@ helloworld();
 
 ### Source build
 
-First try to clone this repository and see if you can build.
+
+After cloning, edit `hellworld.c` to change the message.
+
+```c
+    php_printf("Hello World!\n");
+```
+
+Next, compile to build.
 
 ```
 phpize
-. /configure
-make.
+./configure
+make
 ```
 
 This will create `modules/helloworld.so`. Now let's give it a try!
@@ -56,6 +65,8 @@ This will create `modules/helloworld.so`. Now let's give it a try!
 ```
 php -d extension=./modules/helloworld.so smoke.php
 ```
+
+When your message is displayed in the hellworld() function, you are done!🎉
 
 ### Continuous Integration
 
